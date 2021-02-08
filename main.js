@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, shell, BrowserWindow } = require('electron')
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -10,6 +10,11 @@ function createWindow () {
   })
 
   win.loadURL('https://gorham.link/')
+
+  win.webContents.on('new-window', function(event, url) {
+    event.preventDefault()
+    shell.openExternal(url)
+  })
 }
 
 app.whenReady().then(createWindow)
