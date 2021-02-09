@@ -1,15 +1,21 @@
 {
   "name": "gorhamlink-electron",
+  "productName": "Gorham Link",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "build": {
+    "appId": "com.benswift.gorhamlink"
+  },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^11.2.1"
+    "electron": "^11.2.1",
+    "electron-packager": "^15.2.0"
   }
 }
